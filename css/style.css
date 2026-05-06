@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-size: 16px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column; /* vertical = mobile */
+  padding: 10px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: white;
+  color: black;
+  text-align: center;
+  padding-top: 100px;
+  transition: 0.3s;
+}
+
+/* Mode sombre */
+body.dark {
+  background: #111;
+  color: white;
+}
+
+/* Bouton */
+#themeToggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+/* Couleur or */
+.gold {
+  color: #d4af37;
+}
+
+/* Particules */
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #ffd700, #b8960c);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: floatUp 1.5s ease-out forwards;
+}
+
+
+@keyframes floatUp {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--x), var(--y)) scale(0.5);
+  }
+}
+
+h3{
+text-decoration: underline;
+}
+
+.btn-link {
+  display: block;
+  text-align: center;
+  padding: 14px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #fffb00, #ff1100);
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #000000;
+}

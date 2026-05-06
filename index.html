@@ -1,0 +1,120 @@
+<!doctype html>
+
+<html lang="fr">
+
+<head>
+
+<meta charset="utf-8">
+
+<title>Bienvenue sur Les Mains D'or</title>
+
+<link rel="icon" type="image/png" href="image/logo1.png">
+
+<link rel="stylesheet" href="css/style.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<header class="top-bar">
+  <h1>
+    Les Mains <span class="gold" id="goldText">D'or</span>
+  </h1>
+  <button id="themeToggle">🌙 </button>
+</header>
+
+<div id="particles-container"></div>
+
+<script>
+const goldText = document.getElementById("goldText");
+
+function createParticle(x, y) {
+  const particle = document.createElement("div");
+  particle.classList.add("particle");
+
+  // Position de départ
+  particle.style.left = x + "px";
+  particle.style.top = y + "px";
+
+  // Direction aléatoire
+  const offsetX = (Math.random() - 0.5) * 100;
+  const offsetY = -Math.random() * 100;
+
+  particle.style.setProperty("--x", offsetX + "px");
+  particle.style.setProperty("--y", offsetY + "px");
+
+  document.body.appendChild(particle);
+
+  setTimeout(() => {
+    particle.remove();
+  }, 1500);
+}
+
+// Génère des particules autour du texte
+setInterval(() => {
+  const rect = goldText.getBoundingClientRect();
+  const x = rect.left + Math.random() * rect.width;
+  const y = rect.top + Math.random() * rect.height;
+
+  createParticle(x, y);
+}, 120);
+</script>
+
+<script>
+const button = document.getElementById("themeToggle");
+
+button.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+
+  if (document.body.classList.contains("dark")) {
+    button.textContent = "☀️ ";
+  } else {
+    button.textContent = "🌙 ";
+  }
+});
+</script>
+
+<body>
+
+<center>
+
+<br>
+
+<h3>Qui sommes-nous ?</h3>
+
+<br>
+
+<p>Un groupe d'ados de 14-15 ans <br>près à vous aider,<br> pour financé des projets<br> communs et individuels.</p>
+
+<br>
+
+<h3>Nos services sont ...</h3>
+
+<br>
+
+<img width="450" src="image/service.png" alt="potdefleur"/>
+
+<br>
+
+<h3>Notre zone d'activité</h3>
+
+<p>📍Vertou<br>📍la Maladrie<br>📍Le Planty<br>📍Le Chêne<br>📍Beautour<br>📍St Sébastien<br>📍Basse-Goulaine<br>📍(Nantes)</p>
+
+<br>
+
+<h3>Nous-Contactez</h3>
+
+<br>
+
+<a href="html/formulaire.html" class="btn-link">Par Mail</a>
+
+<br>
+
+<a href="sms:+33612345678?body=Bonjour%20je%20vous%20contacte" class="btn-link">
+  Par SMS
+</a>
+
+
+</center>
+
+</body>
